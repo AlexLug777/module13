@@ -1,0 +1,25 @@
+tickets = int(input("Введите количество билетов:\n"))
+result = 0
+count = 0
+for i in range(tickets):
+    age = int(input("Введите возраст посетителя:\n"))
+    if 0 <= age < 18:
+        print("Бесплатный вход")
+        result += 0
+        count += 1
+    elif 18 <= age < 25:
+        print("Стоимость билета: 990 рублей")
+        result += 990
+        count += 1
+    elif 25 <= age < 95:
+        print("Стоимость билета: 1390 рублей")
+        result += 1390
+        count += 1
+    else:
+        print("Введите корректный возраст")
+    if tickets > 3 and count > 3:
+        result = int(result - result * 0.1)
+        print(f"Общая стоимость {count} билетов с учётом скидки: {result} рублей")
+    if tickets < 3 and count < 3:
+        result = result
+        print(f"Общая стоимость {count} билетов: {result} рублей")
